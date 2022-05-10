@@ -11,7 +11,7 @@ class CalibreModel(models.Model):
         )
 
     def __str__(self):
-        return self.desc_calibre
+        return f'{self.desc_calibre}'
 
 
 ## TABELA DE TIPO DE OBJETO
@@ -23,7 +23,7 @@ class ObjetoTipoModel(models.Model):
         )
 
     def __str__(self):
-        return self.tipo_de_objeto
+        return f'{self.tipo_de_objeto}'
 
 
 ## TABELA DE OBJETOS
@@ -35,7 +35,7 @@ class ObjetoModel(models.Model):
         )
 
     def __str__(self):
-        return self.objeto_tipo_id
+        return f'{self.objeto_tipo}-{self.id}'
 
 
 ## TABELA DE ARMAS
@@ -60,6 +60,11 @@ class ArmaModel(models.Model):
     valor_estimado = models.FloatField(verbose_name='Valor estimado')
     imagem = models.ImageField()
 
+
+    def __str__(self):
+        return f'{self.objeto}'
+
+
 ## TABELA DE MUNICAO
 class MunicaoModel(models.Model):
     calibre = models.ForeignKey(
@@ -77,3 +82,5 @@ class MunicaoModel(models.Model):
         on_delete=models.CASCADE ,
         verbose_name='Objeto'
         )
+    def __str__(self):
+        return f'{self.objeto}'
