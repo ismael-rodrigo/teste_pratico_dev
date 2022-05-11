@@ -27,7 +27,6 @@ class ArmaSerializer(serializers.ModelSerializer):
     objeto = ObjetoSerializer(read_only = True)
 
     def create(self,validated_data):
-        print(validated_data)
         tipoArma = ObjetoTipoModel.objects.get(tipo_de_objeto = 'arma')
         objeto = ObjetoModel(objeto_tipo = tipoArma)
         objeto.save()
