@@ -2,6 +2,7 @@ from api.views import  ArmaViewSet, CalibreViewSet, MunicaoViewSet, ObjetoTipoVi
 from rest_framework.routers import DefaultRouter
 from django.urls import  path
 
+
 router = DefaultRouter()
 
 router.register(r'calibres', CalibreViewSet, basename='calibres')
@@ -14,7 +15,6 @@ urlpatterns = [
 ]
 
 urlpatterns += router.urls
-    
     
 
 
