@@ -1,7 +1,7 @@
 # REST API  aplicação DEV-JR Polícia Civil
 
 ## Install
-    git clone https://github.com/ismael-rodrigo/teste_pratico_dev
+    git clone https://github.com/ismael-rodrigo/teste_pratico_dev.git
 
     cd teste_pratico_dev
 
