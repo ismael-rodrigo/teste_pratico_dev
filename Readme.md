@@ -1,6 +1,9 @@
 # REST API  aplicação DEV-JR Polícia Civil
 
 ## Install
+    git clone https://github.com/ismael-rodrigo/teste_pratico_dev
+
+    cd teste_pratico_dev
 
     pip install -r requirements.txt
 
@@ -239,7 +242,7 @@ REST API criada para teste de vaga Dev.Jr da Polícia Civil.
 
 ### Request
 
-`POST api/objetos-tipo/`
+`POST api/armas/`
 
 
 
