@@ -24,13 +24,15 @@ class ObjetoSerializer(serializers.ModelSerializer):
 
 
 class ArmaSerializer(serializers.ModelSerializer):
+    objeto = ObjetoSerializer(read_only = True)
 
     def create(self,validated_data):
+        print(validated_data)
         tipoArma = ObjetoTipoModel.objects.get(tipo_de_objeto = 'arma')
         objeto = ObjetoModel(objeto_tipo = tipoArma)
         objeto.save()
         
-        return ArmaModel(objeto=objeto , **validated_data)
+        return ArmaModel.objects.create(objeto=objeto , **validated_data)
 
 
     class Meta:
@@ -42,12 +44,15 @@ class ArmaSerializer(serializers.ModelSerializer):
 
 
 class MunicaoSerializer(serializers.ModelSerializer):
+    objeto = ObjetoSerializer(read_only = True)
+
+
     def create(self,validated_data):
         tipoMunicao = ObjetoTipoModel.objects.get(tipo_de_objeto = 'munição')
         objeto = ObjetoModel(objeto_tipo = tipoMunicao)
         objeto.save()
         
-        return MunicaoModel(objeto=objeto , **validated_data)
+        return MunicaoModel.objects.create(objeto=objeto , **validated_data)
 
 
 

@@ -1,16 +1,16 @@
-from api.views import ArmaView, CalibreViewSet, MunicaoView, ObjetoTipoViewSet
+from api.views import  ArmaViewSet, CalibreViewSet, MunicaoViewSet, ObjetoTipoViewSet
 from rest_framework.routers import DefaultRouter
 from django.urls import  path
 
 router = DefaultRouter()
 
 router.register(r'calibres', CalibreViewSet, basename='calibres')
-router.register(r'objeto-tipo', ObjetoTipoViewSet, basename='objeto-tipo')
-
+router.register(r'objeto-tipos', ObjetoTipoViewSet, basename='objeto-tipos')
+router.register(r'armas', ArmaViewSet, basename='armas')
+router.register(r'municoes', MunicaoViewSet, basename='municoes')
 
 urlpatterns = [
-    path('armas', ArmaView.as_view(),name='Armas'),
-    path('municao', MunicaoView.as_view(),name='Munição'),
+
 ]
 
 urlpatterns += router.urls
