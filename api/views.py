@@ -16,10 +16,10 @@ class ObjetoTipoViewSet(viewsets.ModelViewSet):
 
 
 class ArmaViewSet(viewsets.ModelViewSet):
-    queryset = ArmaModel.objects.all()#.select_related('objeto' , 'calibre')
+    queryset = ArmaModel.objects.all().select_related('objeto' , 'calibre')
     serializer_class = ArmaSerializer
 
 
 class MunicaoViewSet(viewsets.ModelViewSet):
-    queryset = MunicaoModel.objects.all()#.select_related('objeto' , 'calibre')
+    queryset = MunicaoModel.objects.all().select_related('objeto' , 'calibre')
     serializer_class = MunicaoSerializer
